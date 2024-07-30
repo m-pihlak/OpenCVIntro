@@ -17,7 +17,7 @@ print("height: {}px".format(h))
 print("channels: {}".format(c))
 
 
-cv2.imshow("Image", image)
+cv2.imshow(args["image"], image)
 cv2.waitKey(0)
 
 cv2.imwrite("images/out/" + args["out"], image)
