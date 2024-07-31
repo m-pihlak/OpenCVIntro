@@ -38,14 +38,6 @@ ap.add_argument("-k", "--kernel", required=True,
 args = vars(ap.parse_args())
 
 image = cv2.imread("images/in/" + args["in"])
-(h, w, c) = image.shape[:3]
-
-print("width: {}px".format(w))
-print("height: {}px".format(h))
-print("channels: {}".format(c))
-
-cv2.imshow(args["in"], image)
-#cv2.waitKey(0)
 
 def blur(blurAmount: int):
     return np.ones((blurAmount, blurAmount), dtype="float") * (1.0 / (blurAmount * blurAmount))
@@ -85,8 +77,17 @@ def applyConvolution(image, kernel_name, kernels):
     # output = cv2.filter2D(gray_scale, -1, kernel)
     return output
 
-
 output = applyConvolution(image, args["kernel"], kernels)
+
+(h, w, c) = image.shape[:3]
+
+print("width: {}px".format(w))
+print("height: {}px".format(h))
+print("channels: {}".format(c))
+
+cv2.imshow(args["in"], image)
+#cv2.waitKey(0)
+
 (h, w) = output.shape[:2]
 
 print("width: {}px".format(w))
