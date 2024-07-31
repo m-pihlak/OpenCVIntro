@@ -36,7 +36,7 @@ for (i, (channel1, color1)) in enumerate(zip(channels[:-1],
         ax = fig.add_subplot(index)
         hist = cv2.calcHist([channel1, channel2], [0, 1], None, [32, 32],
                             [0, 256, 0, 256])
-        p = ax.imshow(hist, interpolation="nearest")
+        p = ax.imshow(hist / hist.sum(), interpolation="nearest")
         ax.set_title(f"2D Color Histogram for {color1.upper()} and {color2.upper()}")
         plt.colorbar(p)
 
