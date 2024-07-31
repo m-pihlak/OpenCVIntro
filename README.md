@@ -68,3 +68,10 @@ After creating the wheel, place it in the ./wheels/ directory and run:
 ```
 pip install wheels/dlib-<version>.whl
 ```
+## Using facial_landmarks.py
+dogHeadDetector.dat and landmarkDetector.dat are from https://github.com/kairess/dog_face_detector <br>
+Finds a dog face in an image and draws a rectangle around it and adds landmarks on it.<br>
+Shape predictors are from ./shape_predictors/
+```
+python facial_landmarks.py -i <input_file_name> -o <output_file_name>
+```
