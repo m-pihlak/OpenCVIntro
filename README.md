@@ -75,3 +75,8 @@ Shape predictors are from ./shape_predictors/
 ```
 python facial_landmarks.py -i <input_file_name> -o <output_file_name>
 ```
+## Using april_tag_detector.py
+Finds AprilTags from an input image.
+```
+python apriltag_detector.py -i <input_file_name>
+```
