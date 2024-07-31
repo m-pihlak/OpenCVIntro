@@ -3,3 +3,4 @@ scikit-image
 matplotlib
 imutils
 cmake
+pupil-apriltags
