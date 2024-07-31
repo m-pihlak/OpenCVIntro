@@ -44,4 +44,13 @@ for (i, (channel1, color1)) in enumerate(zip(channels[:-1],
 
 print(f"2D histogram shape: {hist.shape}, with {hist.flatten().shape[0]} values")
 
+hist = cv2.calcHist([image], [0, 1, 2],
+                    None, [8, 8, 8],
+                    [0, 256]*3)
+print(f"3D histogram shape: {hist.shape}, with {hist.flatten().shape[0]} values")
+
+plt.figure()
+plt.axis("off")
+plt.imshow(imutils.opencv2matplotlib(image))
+
 plt.show()
