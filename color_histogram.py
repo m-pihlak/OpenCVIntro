@@ -24,6 +24,7 @@ for (channel, color) in zip(channels, colors):
     plt.plot(hist / hist.sum(), color=color)
     plt.xlim([0, 256])
 
+print(f"1D histogram shape: {hist.shape}, with {hist.flatten().shape[0]} values")
 
 fig = plt.figure()
 index = 131
@@ -40,5 +41,7 @@ for (i, (channel1, color1)) in enumerate(zip(channels[:-1],
         plt.colorbar(p)
 
         index += 1
+
+print(f"2D histogram shape: {hist.shape}, with {hist.flatten().shape[0]} values")
 
 plt.show()
