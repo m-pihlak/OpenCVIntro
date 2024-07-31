@@ -25,7 +25,7 @@ print("channels: {}".format(c))
 
 print("[INFO] performing dog detection...")
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-rects = detector.detectMultiScale(gray, scaleFactor=1.05,
+rects = detector.detectMultiScale(gray, scaleFactor=1.06,
                                   minNeighbors=5, minSize=(30, 30),
                                   flags=cv2.CASCADE_SCALE_IMAGE)
 print(f"[INFO] {len(rects)} faces detected...")
