@@ -2,8 +2,10 @@
 
 ## Guide to initalizing
 1. (optional) Create a pyvenv
-2. Run python install -r requirements.txt
-
+2. Run the following command:
+```
+pip install -r requirements.txt
+```
 ## General usage
 Images are taken from images/in and written to images/out
 
