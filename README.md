@@ -49,3 +49,12 @@ Cascades are from ./cascades/
 ```
 python haar_dog_detector.py [optional: -c <cascade_file_name>] -i <input_file_name> -o <output_file_name>
 ```
+## Using haar_video_detector.py
+dog_face.xml is from https://github.com/metinozkan/DogAndCat-Face-Opencv <br>
+Finds a dog (probably a cat as well, since the cascade should be for both dogs and cats) face in the webcam and outputs a video stream with rectangle around the face.<br>
+To stop the program, press key 'C'.<br>
+Cascades are from ./cascades/ <br>
+Good at detecting Golden Retrievers.
+```
+python haar_video_detector.py [optional: -c <cascade_file_name>]
+```
