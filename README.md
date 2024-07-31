@@ -58,3 +58,13 @@ Good at detecting Golden Retrievers.
 ```
 python haar_video_detector.py [optional: -c <cascade_file_name>]
 ```
+# Installing dlib
+Since dlib installation is architecture based, then it usually will not work with pip install.<br>
+What is needed to make a dlib wheel:
+1. CMake https://cmake.org/download/
+2. VS Desktop development with C++ https://stackoverflow.com/questions/51668676/cmake-visual-studio-15-2017-could-not-find-any-instance-of-visual-studio
+3. dlib source code (also contains instructions for building) https://github.com/davisking/dlib
+After creating the wheel, place it in the ./wheels/ directory and run:
+```
+pip install wheels/dlib-<version>.whl
+```
