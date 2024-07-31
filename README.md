@@ -7,7 +7,7 @@
 pip install -r requirements.txt
 ```
 ## General usage
-Images are taken from images/in and written to images/out
+Images are taken from ./images/in/ and written to ./images/out/
 
 ## Using load_image.py
 General testing of loading and writing images. Allows to convert image filetypes (-i filename.jpg -o filename.png)
@@ -41,4 +41,11 @@ python color_histogram.py -i <input_file_name>
 Similar to color_histogram.py, but also applies a mask, which is made by the top left x, y coordinate and bottom right x, y coordinate pairs.
 ```
 python histogram_with_mask.py -i <input_file_name>
+```
+## Using haar_dog_detector.py
+dog_face.xml is from https://github.com/metinozkan/DogAndCat-Face-Opencv <br>
+Finds a dog (probably a cat as well, since the cascade should be for both dogs and cats) face in an image and draws a rectangle around it.<br>
+Cascades are from ./cascades/
+```
+python haar_dog_detector.py [optional: -c <cascade_file_name>] -i <input_file_name> -o <output_file_name>
 ```
