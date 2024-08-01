@@ -21,25 +21,24 @@ print(f"[INFO] {len(results)} total AprilTags detected")
 
 for r in results:
     (ptA, ptB, ptC, ptD) = r.corners
-    ptA = (int(ptA[0]), int(ptA[1]))
-    ptB = (int(ptB[0]), int(ptB[1]))
-    ptC = (int(ptC[0]), int(ptC[1]))
-    ptD = (int(ptD[0]), int(ptD[1]))
 
-    cv2.line(image, ptA, ptB,
-             (0, 255, 0), 2)
-    cv2.line(image, ptB, ptC,
-             (0, 255, 0), 2)
-    cv2.line(image, ptC, ptD,
-             (0, 255, 0), 2)
-    cv2.line(image, ptD, ptA,
+    corners = []
+    for corner in r.corners:
+        corners.append((int(corner[0]), 
+                        int(corner[1])))
+
+    corners += [corners[0]]
+
+    for i, corner1 in enumerate(corners[:-1]):
+        corner2 = corners[i + 1]
+        cv2.line(image, corner1, corner2,
              (0, 255, 0), 2)
     
     (cX, cY) = (int(r.center[0]), int(r.center[1]))
     cv2.circle(image, (cX, cY), 5, (0, 0, 255), -1)
 
     tagFamily = r.tag_family.decode("utf-8")
-    cv2.putText(image, tagFamily, (ptA[0], ptA[1] - 15),
+    cv2.putText(image, tagFamily, (corners[0][0], corners[0][1] - 15),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                 (0, 255, 0), 2)
     print(f"[INFO] tag family: {tagFamily}")
