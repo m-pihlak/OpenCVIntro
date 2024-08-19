@@ -1,4 +1,4 @@
-# OpenCVIntro
+# OpenCVMiniPrograms
 
 ## Guide to initalizing
 1. (optional) Create a pyvenv
